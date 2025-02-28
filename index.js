@@ -12,3 +12,8 @@ function enviarWhats(event) {
 
   window.open(url, '_blank');
 }
+
+function toggleMenu() {
+  document.querySelector('.menu').classList.toggle('show');
+  document.querySelector('.hamburguer').classList.toggle('hide');
+}

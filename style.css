@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   list-style: none;
+  text-decoration: none;
 }
 
 html {
@@ -31,6 +32,12 @@ body {
   width: 100%;
   z-index: 100;
   padding: 1.5rem;
+}
+
+.hamburguer {
+  font-size: 30px;
+  cursor: pointer;
+  display: none; /* Oculto por padrão */
 }
 
 .menu {
@@ -123,14 +130,21 @@ body {
 .projetos-titulo {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.projeto-titulo:visited {
+  color: none;
 }
 
 .projetos-caixa {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
+  width: 400px;
+  max-width: 100%;
+  /* display: grid; */
+  /* grid-template-columns: 1fr; */
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  /* gap: 2rem; */
+  /* max-width: 1200px; */
   margin-inline: auto;
 }
 
@@ -150,10 +164,10 @@ body {
 }
 
 .projeto-imagem {
-  height: 200px;
+  height: 300px;
   max-width: 100%;
-  display: block;
   object-fit: cover;
+  display: block;
 }
 
 .projeto-caixa-informacao {
@@ -162,6 +176,7 @@ body {
 
 .projeto-titulo {
   margin-bottom: 5px;
+  color: #fff;
 }
 
 .projeto-descricao {
@@ -241,7 +256,7 @@ body {
     radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 30%),
     var(--maisEscuro);
 }
-
+/* Animações */
 @keyframes flutuar {
   0%,
   100% {
@@ -250,5 +265,35 @@ body {
 
   50% {
     transform: translateY(-20px);
+  }
+}
+
+/* Reponsividade */
+@media (max-width: 480px) {
+  .hamburguer {
+    display: block; /* Exibir o ícone */
+  }
+  .menu {
+    display: none;
+  }
+
+  .menu.show {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hamburguer.hide {
+    display: none;
+  }
+  .foto-perfil {
+    width: 250px;
+    height: 250px;
+  }
+  .nome-perfil {
+    font-size: 2.5rem;
   }
 }
